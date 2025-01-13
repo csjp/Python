@@ -96,13 +96,22 @@ $ docker push your_username/house-price-prediction-api:v1
 Other developers can now pull and run the image like so: 
 
 ```
+$ docker pull your_username/house-price-prediction-api:v1
+$ docker run -d -p 80:80 your_username/house-price-prediction-api:v1
+```
+
+Anyone with access to your Docker Hub repository can now pull the image and run the container.
+
+For example, you can now pull and run my image from Docker Hub like so: 
+
+```
 $ docker pull yoyomaper/house-price-prediction-api:v1
 $ docker run -d -p 80:80 yoyomaper/house-price-prediction-api:v1
 ```
 
 Your API should now be running and accessible at http://127.0.0.1:80.
 
-You can use curl or Postman to test the /predict endpoint by sending a POST request. Here’s an example request:
+You can use curl or Postman locally to test the /predict endpoint by sending a POST request. Here’s an example request:
 ```
 curl -X 'POST' \
   'http://127.0.0.1:80/predict' \
